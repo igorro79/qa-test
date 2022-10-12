@@ -18,7 +18,7 @@ const BlogPost = ({
 }) => {
   const url = `${siteUrl}${post.fields.slug}`
   const { description, featuredimage, publishedDate, title } = post.frontmatter
-
+  console.log(post.html)
   return (
     <Layout>
       <GatsbySeo
@@ -67,7 +67,7 @@ const BlogPost = ({
             <h1 className="text-3xl leading-12 text-gray-800 lg:text-4xl lg:leading-14 mb-2">
               {title}
             </h1>
-            <p class="text-sm lg:text-base font-normal text-gray-600">
+            <p className="text-sm lg:text-base font-normal text-gray-600">
               Published {publishedDate}
             </p>
           </div>
