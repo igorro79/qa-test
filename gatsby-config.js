@@ -1,16 +1,16 @@
-const siteUrl = 'https://gatsby-starter-netlify-tailwind.netlify.app/'
-const title = 'Gatsby Starter Netlify Tailwind'
+const siteUrl = ''
+const title = 'QA test docs'
 const description =
   'This repo contains an example blog website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.'
 const logo = '/img/logo.png'
 const srcLogo = 'src/images/gatsby-icon.png'
 const color = '#433e85'
 const social = {
-  twitter: 'gautier_manu',
+  twitter: '',
   instagram: '',
   youtube: '',
-  github: 'emmanuelgautier',
-  linkedin: 'emmanuelgautier1',
+  github: '',
+  linkedin: '',
 }
 const gtagId = 'G-V165P2CKRK'
 
