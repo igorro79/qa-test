@@ -1,10 +1,7 @@
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import { GatsbyImage, getImage, getSrc } from 'gatsby-plugin-image'
-import {
-  GatsbySeo,
-  ArticleJsonLd,
-} from 'gatsby-plugin-next-seo'
-import { kebabCase } from 'lodash'
+import { GatsbySeo, ArticleJsonLd } from 'gatsby-plugin-next-seo'
+// import { kebabCase } from 'lodash'
 import PropTypes from 'prop-types'
 import React from 'react'
 
@@ -70,15 +67,14 @@ const BlogPost = ({
             <h1 className="text-3xl leading-12 text-gray-800 lg:text-4xl lg:leading-14 mb-2">
               {title}
             </h1>
-            <p class="text-sm lg:text-base font-normal text-gray-600">Published {publishedDate}</p>
+            <p class="text-sm lg:text-base font-normal text-gray-600">
+              Published {publishedDate}
+            </p>
           </div>
         </header>
 
         <div className="mt-4">
-          <HTMLContent
-            className="prose max-w-none"
-            content={post.html}
-          />
+          <HTMLContent className="prose max-w-none" content={post.html} />
         </div>
       </article>
     </Layout>
