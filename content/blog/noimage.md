@@ -1,8 +1,12 @@
 ---
 templateKey: blog-post
-title: noimage
+title: second soldier
 date: 2022-10-12T18:00:32.922Z
-description: noimage desc
-featuredimage: noimage.jpg
+description: second soldier desc
+featuredimage: soldier-60707_960_720.jpg
 ---
-noimage body
+second soldier body22
+
+![second soldier](soldier-60707_960_720-1-.jpg)
+
+t﻿ext after second soldier
