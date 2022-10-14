@@ -22,23 +22,21 @@ const BlogPost = ({
   return (
     <Layout>
       <div className="w-full">
-        <div className="mt-4">
-          <GatsbyImage
-            image={getImage(featuredimage)}
-            className="rounded-md object-cover w-full h-64 lg:h-96 mb-4 lg:mb-8"
-            alt={title}
-            title={title}
-          />
-          <div className="space-y-4 text-left">
-            <h1 className="text-3xl leading-12 text-gray-800 lg:text-4xl lg:leading-14 mb-2">
-              {title}
-            </h1>
-            {/* <p className="text-sm lg:text-base font-normal text-gray-600">
+        <GatsbyImage
+          image={getImage(featuredimage)}
+          className="rounded-md object-cover w-full h-64 lg:h-96 mb-4 lg:mb-8"
+          alt={title}
+          title={title}
+        />
+        <div className="space-y-4 text-left">
+          <h1 className="text-3xl leading-12 text-gray-800 lg:text-4xl lg:leading-14 mb-2">
+            {title}
+          </h1>
+          {/* <p className="text-sm lg:text-base font-normal text-gray-600">
               Published {publishedDate}
             </p> */}
-          </div>
-          <HTMLContent className="prose max-w-none" content={post.html} />
         </div>
+        <HTMLContent className="prose max-w-none" content={post.html} />
       </div>
     </Layout>
   )
