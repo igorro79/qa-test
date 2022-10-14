@@ -24,10 +24,9 @@ const Footer = () => {
         <div className="w-full mt-6 lg:mt-0 lg:w-1/2 lg:w-2/5">
           <div className="p-4">
             <h6 className="font-semibold text-gray-700 mb-4">Footer</h6>
-            <ul>
-              <li>
-                <div className="flex justify-start items-center text-lg text-gray-700">
-                  {/* {twitter && (
+
+            <div className="flex justify-start items-center text-lg text-gray-700">
+              {/* {twitter && (
                     <OutboundLink
                       className="flex items-center hover:text-gray-700 mr-5"
                       href={`https://twitter.com/${twitter}`}
@@ -90,10 +89,8 @@ const Footer = () => {
                   >
                     <FontAwesomeIcon icon={faRss} />
                   </a> */}
-                  {description} Copyright @2022
-                </div>
-              </li>
-            </ul>
+              {description} Copyright @2022
+            </div>
           </div>
         </div>
       </div>

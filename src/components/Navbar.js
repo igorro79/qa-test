@@ -14,6 +14,9 @@ export default function Navbar() {
             Специфікація до web ресурсу
           </Link>
         </li>
+        <li>
+          <div className="h-px w-full  bg-black"></div>
+        </li>
         {Array.isArray(menuItems) &&
           menuItems.map(item => (
             <li key={item.node.fields.slug} className="mt-2">

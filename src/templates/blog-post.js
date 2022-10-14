@@ -21,42 +21,8 @@ const BlogPost = ({
   console.log(post)
   return (
     <Layout>
-      {/* <GatsbySeo
-        title={title}
-        description={description}
-        canonical={url}
-        openGraph={{
-          title,
-          description,
-          url,
-          type: 'article',
-          article: {
-            publishedTime: publishedDate,
-            modifiedTime: publishedDate,
-          },
-          images: [
-            {
-              url: `${siteUrl}${getSrc(featuredimage)}`,
-              alt: title,
-            },
-          ],
-        }}
-      />
-      <ArticleJsonLd
-        url={url}
-        headline={title}
-        images={[`${siteUrl}${getSrc(featuredimage)}`]}
-        datePublished={publishedDate}
-        dateModified={publishedDate}
-        publisherLogo={`${siteUrl}/logo.png`}
-        description={description}
-        overrides={{
-          '@type': 'BlogPosting',
-        }}
-      /> */}
-
-      <article className="max-w-2xl mx-auto px-4 sm:px-6 xl:max-w-4xl xl:px-0">
-        <header className="pt-2 pb-2 lg:pb-4">
+      <div className="w-full">
+        <div className="mt-4">
           <GatsbyImage
             image={getImage(featuredimage)}
             className="rounded-md object-cover w-full h-64 lg:h-96 mb-4 lg:mb-8"
@@ -71,12 +37,9 @@ const BlogPost = ({
               Published {publishedDate}
             </p> */}
           </div>
-        </header>
-
-        <div className="mt-4">
           <HTMLContent className="prose max-w-none" content={post.html} />
         </div>
-      </article>
+      </div>
     </Layout>
   )
 }
