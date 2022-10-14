@@ -1,7 +1,6 @@
 const siteUrl = 'https://gatsby-starter-netlify-tailwind.netlify.app/'
 const title = 'QA test docs'
-const description =
-  'This repo contains an example blog website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.'
+const description = 'Testing gatsby'
 const logo = '/img/logo.png'
 const srcLogo = 'src/images/gatsby-icon.png'
 const color = '#433e85'
@@ -24,6 +23,7 @@ module.exports = {
     social,
   },
   plugins: [
+    'gatsby-transformer-remark',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-postcss',
     {
@@ -50,41 +50,41 @@ module.exports = {
     `gatsby-plugin-image`,
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [
-          {
-            resolve: 'gatsby-remark-relative-images',
-            options: {
-              staticFolderName: 'static',
-            },
-          },
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
-              maxWidth: 2048,
+    // {
+    //   resolve: 'gatsby-transformer-remark',
+    //   options: {
+    //     plugins: [
+    //       {
+    //         resolve: 'gatsby-remark-relative-images',
+    //         options: {
+    //           staticFolderName: 'static',
+    //         },
+    //       },
+    //       {
+    //         resolve: 'gatsby-remark-images',
+    //         options: {
+    //           // It's important to specify the maxWidth (in pixels) of
+    //           // the content container as this plugin uses this as the
+    //           // base for generating different widths of each image.
+    //           maxWidth: 2048,
 
-              linkImagesToOriginal: true,
-              loading: 'lazy',
-              showCaptions: true,
-              disableBgImage: true,
-              withWebp: true,
-            },
-          },
-          {
-            resolve: 'gatsby-remark-copy-linked-files',
-            options: {
-              destinationDir: 'static',
-            },
-          },
-          'gatsby-remark-smartypants',
-        ],
-      },
-    },
+    //           linkImagesToOriginal: true,
+    //           loading: 'lazy',
+    //           showCaptions: true,
+    //           disableBgImage: true,
+    //           withWebp: true,
+    //         },
+    //       },
+    //       {
+    //         resolve: 'gatsby-remark-copy-linked-files',
+    //         options: {
+    //           destinationDir: 'static',
+    //         },
+    //       },
+    //       'gatsby-remark-smartypants',
+    //     ],
+    //   },
+    // },
     'gatsby-plugin-catch-links',
     {
       resolve: 'gatsby-plugin-netlify-cms',

@@ -1,28 +1,45 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 
-import useSiteMetadata from '../queries/site-metadata'
-
-import Logo from './Logo'
+import useMenuStructure from '../queries/menu-structure'
 
 export default function Navbar() {
-  const { title } = useSiteMetadata()
-
+  const menuItems = useMenuStructure()
+  console.log(menuItems)
   return (
-    <header className="flex items-center justify-between py-2">
-      <Link to={`/`} className="px-2 lg:px-0">
-        <Logo title={title} />
-      </Link>
-      <ul className="hidden lg:inline-flex items-center">
-        <li key="navbar-blog-index" className="px-2 lg:px-4">
-          <Link
-            to={`/blog`}
-            className="text-gray-500 font-semibold hover:text-gray-700"
-          >
-            Blog
+    <div className="font-bold w-60 bg-blue-200  py-2">
+      <ul className="flex flex-col lg:inline-flex items-center">
+        <li>
+          <Link to={'/'} className=" px-2 lg:px-0">
+            Специфікація до web ресурсу
           </Link>
         </li>
+        {Array.isArray(menuItems) &&
+          menuItems.map(item => (
+            <li key={item.node.fields.slug} className="mt-2">
+              <Link to={item.node.fields.slug} className=" px-2 lg:px-0">
+                {item.node.frontmatter.title}
+              </Link>
+            </li>
+          ))}
       </ul>
-    </header>
+    </div>
   )
 }
+
+export const query = graphql`
+  query {
+    allMarkdownRemark {
+      nodes {
+        id
+        fields {
+          slug
+        }
+        frontmatter {
+          title
+          description
+        }
+      }
+    }
+  }
+`

@@ -1,6 +1,6 @@
 import 'fontsource-open-sans'
 
-import { withPrefix } from 'gatsby'
+import { withPrefix, graphql } from 'gatsby'
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
@@ -10,7 +10,8 @@ import Navbar from '../components/Navbar'
 
 import useSiteMetadata from '../queries/site-metadata'
 
-import './all.css'
+import '../styles/all.css'
+import Header from './Header'
 
 const Layout = ({ children }) => {
   const { color } = useSiteMetadata()
@@ -65,9 +66,12 @@ const Layout = ({ children }) => {
       </Helmet>
 
       <div className="max-w-screen-lg mx-auto antialiased">
-        <Navbar />
+        <Header />
 
-        <main className="mt-4 lg:mt-12">{children}</main>
+        <main className="flex ">
+          <Navbar />
+          {children}
+        </main>
 
         <Footer />
       </div>

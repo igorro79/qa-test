@@ -21,7 +21,7 @@ const BlogPost = ({
 
   return (
     <Layout>
-      <GatsbySeo
+      {/* <GatsbySeo
         title={title}
         description={description}
         canonical={url}
@@ -53,21 +53,21 @@ const BlogPost = ({
         overrides={{
           '@type': 'BlogPosting',
         }}
-      />
+      /> */}
 
       <article className="max-w-2xl mx-auto px-4 sm:px-6 xl:max-w-4xl xl:px-0">
         <header className="pt-2 pb-2 lg:pb-4">
-          <GatsbyImage
+          {/* <GatsbyImage
             image={getImage(featuredimage)}
             className="rounded-md object-cover w-full h-64 lg:h-96 mb-4 lg:mb-8"
             alt={title}
             title={title}
-          />
+          /> */}
           <div className="space-y-4 text-left">
             <h1 className="text-3xl leading-12 text-gray-800 lg:text-4xl lg:leading-14 mb-2">
               {title}
             </h1>
-            <p class="text-sm lg:text-base font-normal text-gray-600">
+            <p className="text-sm lg:text-base font-normal text-gray-600">
               Published {publishedDate}
             </p>
           </div>
@@ -100,16 +100,6 @@ export const pageQuery = graphql`
       frontmatter {
         date
         title
-        featuredimage {
-          childImageSharp {
-            gatsbyImageData(
-              height: 350
-              placeholder: BLURRED
-              formats: [AUTO, WEBP, AVIF]
-              layout: CONSTRAINED
-            )
-          }
-        }
         description
       }
     }

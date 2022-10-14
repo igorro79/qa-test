@@ -36,6 +36,7 @@ exports.createPages = ({ actions, graphql }) => {
     }
 
     const posts = result.data.allMarkdownRemark.edges
+
     posts.forEach(edge => {
       const id = edge.node.id
       createPage({
@@ -49,12 +50,10 @@ exports.createPages = ({ actions, graphql }) => {
       })
     })
 
-    createPage({
-      path: '/',
-      component: path.resolve(
-        `src/templates/index-page.js`
-      )
-    })
+    // createPage({
+    //   path: '/',
+    //   component: path.resolve(`src/templates/index-page.js`),
+    // })
   })
 }
 
