@@ -19,7 +19,7 @@ const Footer = () => {
   } = useSiteMetadata()
 
   return (
-    <footer className="border-t mt-1 py-1  px-4 lg:px-0 bg-sky-500/100">
+    <footer className="border-t py-1  px-4 lg:px-0 bg-sky-500/100">
       <div className="flex flex-wrap">
         <div className="w-full mt-6 lg:mt-0 lg:w-1/2 lg:w-2/5">
           <div className="p-4">

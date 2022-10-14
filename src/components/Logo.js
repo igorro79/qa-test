@@ -5,13 +5,13 @@ import React from 'react'
 export default function Logo({ title, className }) {
   return (
     <StaticImage
-      src="../images/gatsby-icon.png"
+      src="../images/go-it-logo.png"
       formats={['auto', 'webp', 'avif']}
       alt={title}
       title={title}
       className={className}
       placeholder="blurred"
-      width={50}
+      width={150}
       height={50}
     />
   )

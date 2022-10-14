@@ -23,6 +23,7 @@ module.exports = {
     social,
   },
   plugins: [
+    'gatsby-transformer-remark',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-postcss',
     {
@@ -49,41 +50,41 @@ module.exports = {
     `gatsby-plugin-image`,
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [
-          {
-            resolve: 'gatsby-remark-relative-images',
-            options: {
-              staticFolderName: 'static',
-            },
-          },
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
-              maxWidth: 2048,
+    // {
+    //   resolve: 'gatsby-transformer-remark',
+    //   options: {
+    //     plugins: [
+    //       {
+    //         resolve: 'gatsby-remark-relative-images',
+    //         options: {
+    //           staticFolderName: 'static',
+    //         },
+    //       },
+    //       {
+    //         resolve: 'gatsby-remark-images',
+    //         options: {
+    //           // It's important to specify the maxWidth (in pixels) of
+    //           // the content container as this plugin uses this as the
+    //           // base for generating different widths of each image.
+    //           maxWidth: 2048,
 
-              linkImagesToOriginal: true,
-              loading: 'lazy',
-              showCaptions: true,
-              disableBgImage: true,
-              withWebp: true,
-            },
-          },
-          {
-            resolve: 'gatsby-remark-copy-linked-files',
-            options: {
-              destinationDir: 'static',
-            },
-          },
-          'gatsby-remark-smartypants',
-        ],
-      },
-    },
+    //           linkImagesToOriginal: true,
+    //           loading: 'lazy',
+    //           showCaptions: true,
+    //           disableBgImage: true,
+    //           withWebp: true,
+    //         },
+    //       },
+    //       {
+    //         resolve: 'gatsby-remark-copy-linked-files',
+    //         options: {
+    //           destinationDir: 'static',
+    //         },
+    //       },
+    //       'gatsby-remark-smartypants',
+    //     ],
+    //   },
+    // },
     'gatsby-plugin-catch-links',
     {
       resolve: 'gatsby-plugin-netlify-cms',
