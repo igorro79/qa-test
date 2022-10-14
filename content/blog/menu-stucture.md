@@ -32,3 +32,9 @@ const useMenuStructure = () => {
   return allMarkdownRemark.edges
 }
 ```
+
+next text 
+
+
+
+![](soldier-60707_960_720-1-.jpg)
