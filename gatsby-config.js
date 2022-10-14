@@ -2,7 +2,7 @@ const siteUrl = 'https://gatsby-starter-netlify-tailwind.netlify.app/'
 const title = 'QA test docs'
 const description = 'Testing gatsby'
 const logo = '/img/logo.png'
-const srcLogo = 'src/images/gatsby-icon.png'
+const srcLogo = 'src/images/go-it-logo.png'
 const color = '#433e85'
 const social = {
   twitter: '',
