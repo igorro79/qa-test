@@ -6,7 +6,8 @@ import useSiteMetadata from '../queries/site-metadata'
 import Logo from './Logo'
 
 export default function Header() {
-  const { title } = useSiteMetadata()
+  // const { title } = useSiteMetadata()
+  const title = 'useSiteMetadata()'
 
   return (
     <header className="flex items-center justify-between py-2 bg-green-300">

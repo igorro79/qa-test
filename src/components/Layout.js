@@ -1,20 +1,20 @@
 import 'fontsource-open-sans'
 
-import { withPrefix, graphql } from 'gatsby'
+import { withPrefix } from 'gatsby'
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 
-import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 
-import useSiteMetadata from '../queries/site-metadata'
+// import useSiteMetadata from '../queries/site-metadata'
 
 import '../styles/all.css'
 import Header from './Header'
 
 const Layout = ({ children }) => {
-  const { color } = useSiteMetadata()
+  const color = '#ffffff'
+  // const { color } = useSiteMetadata()
 
   return (
     <>
@@ -72,8 +72,6 @@ const Layout = ({ children }) => {
           <Navbar />
           {children}
         </main>
-
-        <Footer />
       </div>
     </>
   )
