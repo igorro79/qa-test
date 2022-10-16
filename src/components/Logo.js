@@ -5,7 +5,7 @@ import React from 'react'
 export default function Logo({ title, className }) {
   return (
     <StaticImage
-      src="../images/go-it-logo.png"
+      src="../images/logo.png"
       formats={['auto', 'webp', 'avif']}
       alt={title}
       title={title}

@@ -9,7 +9,7 @@ import Navbar from '../components/Navbar'
 
 // import useSiteMetadata from '../queries/site-metadata'
 
-import '../styles/all.css'
+// import '../styles/all.css'
 import Header from './Header'
 
 const Layout = ({ children }) => {

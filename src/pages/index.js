@@ -7,7 +7,6 @@ import PropTypes from 'prop-types'
 import { HTMLContent } from '../components/Content'
 
 export default function HomePage({ data }) {
-  console.log(data)
   return (
     <Layout>
       <div className="w-full">

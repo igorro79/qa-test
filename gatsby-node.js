@@ -12,49 +12,50 @@ const webpack = require(`webpack`)
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
-  // return graphql(`
-  //   {
-  //     allMarkdownRemark(limit: 1000) {
-  //       edges {
-  //         node {
-  //           id
-  //           fields {
-  //             slug
-  //           }
-  //           frontmatter {
-  //             templateKey
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `).then(result => {
-  //   if (result.errors) {
-  //     result.errors.forEach(e => console.error(e.toString()))
+  return graphql(`
+    {
+      allMarkdownRemark(
+        limit: 1000
+        filter: { frontmatter: { templateKey: { eq: "component" } } }
+      ) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+              description
+              templateKey
+            }
+            html
+          }
+        }
+      }
+    }
+  `).then(result => {
+    if (result.errors) {
+      result.errors.forEach(e => console.error(e.toString()))
 
-  //     return Promise.reject(result.errors)
-  //   }
+      return Promise.reject(result.errors)
+    }
+    console.log(result)
+    const componentData = result.data.allMarkdownRemark.edges
 
-  //   const posts = result.data.allMarkdownRemark.edges
-
-  // posts.forEach(edge => {
-  //   const id = edge.node.id
-  //     createPage({
-  //       path: edge.node.fields.slug,
-  //       component: path.resolve(
-  //         `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
-  //       ),
-  //       context: {
-  //         id,
-  //       },
-  //     })
-  // })
-
-  createPage({
-    path: '/',
-    component: path.resolve(`src/templates/index-page.js`),
+    componentData.forEach(({ node }) => {
+      const { title, description } = node.frontmatter
+      createPage({
+        path: node.fields.slug,
+        component: path.resolve(
+          `src/templates/${String(node.frontmatter.templateKey)}.js`
+        ),
+        context: {
+          node,
+        },
+      })
+    })
   })
-  // })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

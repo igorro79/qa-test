@@ -1,27 +1,27 @@
-// import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 
-// const useMenuStructure = () => {
-//   const { allMarkdownRemark } = useStaticQuery(
-//     graphql`
-//       query MenuStructureQuery {
-//         allMarkdownRemark {
-//           edges {
-//             node {
-//               fields {
-//                 slug
-//               }
-//               frontmatter {
-//                 description
-//                 title
-//               }
-//             }
-//           }
-//         }
-//       }
-//     `
-//   )
+export default function useMenuStructure() {
+  const { allMarkdownRemark } = useStaticQuery(
+    graphql`
+      query MenuStructureQuery {
+        allMarkdownRemark(
+          filter: { frontmatter: { templateKey: { eq: "component" } } }
+        ) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+              frontmatter {
+                description
+                title
+              }
+            }
+          }
+        }
+      }
+    `
+  )
 
-//   return allMarkdownRemark.edges
-// }
-
-// export default useMenuStructure
+  return allMarkdownRemark.edges
+}
