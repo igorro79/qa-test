@@ -1,6 +1,6 @@
 ---
 templateKey: component
-title: Специфікація до web-ресурсу
+title: specification to a web-service
 featuredimage: /img/soldier-60707_960_720.png
 ---
 
