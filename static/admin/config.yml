@@ -22,12 +22,11 @@ collections:
           label: 'Template Key',
           name: 'templateKey',
           widget: 'hidden',
-          default: 'component',
+          default: 'home',
         }
       - { label: 'Title', name: 'title', widget: 'string', required: true }
-      - { label: 'Featured Image', name: 'featuredimage', widget: image }
       - { label: 'Body', name: 'body', widget: 'markdown' }
-  - name: 'components'
+  - name: 'components-and-functionality'
     label: 'Components and Functionality'
     folder: 'content/components'
     create: true
